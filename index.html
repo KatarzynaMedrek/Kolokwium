@@ -32,13 +32,18 @@
    <div id="app">
         <div class="container" v-for='r in rows' >
             <div  v-for='c in columns' >
-                <div class="cell" :class='{active:(active[0] == r && active[1] == c)}'>
+                
+                <div @click="setNewActive(r, c)" class="cell" :class='{active:(active[0] == r && active[1] == c)}'>
+                    
                     <div class="inside">{{r}},{{c}}</div>
+                </button>
                 </div>
+            
      </div>
      </div>
      {{ message }}
      </div>
+    
     <script>
     var app = new Vue({
         el: '#app',
@@ -47,6 +52,11 @@
             rows:10,
             columns:10,
             active:[1,1]
+        },
+        methods: {
+            setNewActive: function(r, c){
+                this.active = [r, c]
+            }
         }
     })
     </script>
