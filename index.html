@@ -26,12 +26,13 @@
 </head>
 <body>
     <div id="app">
-       
+        {{ message }}
      </div>
     <script>
     var app = new Vue({
         el: '#app',
         data: {
+            message: 'Powodzenia',
             rows:10,
             columns:10,
             active:[1,1]
